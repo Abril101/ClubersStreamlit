@@ -14,7 +14,7 @@ df_rest_info.columns = [c.strip().replace(' ', '_') for c in df_rest_info.column
 df_personas.columns = [c.strip().replace(' ', '_') for c in df_personas.columns]
 
 # --- Renombrar columnas de categorías en df_personas ---
-categoria_cols = ['Asiática', 'Bebidas', 'Categoría_2', 'Categoría_8',
+categoria_cols = ['Asiática', 'Cafeterias', 'Bebidas', 'Maritimo',
                   'Comida_Rápida', 'Desayunos', 'Italiana', 'Postres', 'Saludable']
 rename_mapping = {col: f'category_{col}' for col in categoria_cols}
 df_personas.rename(columns=rename_mapping, inplace=True)
