@@ -14,9 +14,19 @@ df_rest_info.columns = [c.strip().replace(' ', '_') for c in df_rest_info.column
 df_personas.columns = [c.strip().replace(' ', '_') for c in df_personas.columns]
 
 # --- Renombrar columnas de categorías en df_personas ---
-categoria_cols = ['Asiática', 'Cafeterias', 'Bebidas', 'Maritimo',
+categoria_cols = ['Asiática', 'Bebidas', 'Categoria_2', 'Categoria_8',
                   'Comida_Rápida', 'Desayunos', 'Italiana', 'Postres', 'Saludable']
-rename_mapping = {col: f'category_{col}' for col in categoria_cols}
+rename_mapping = {
+    'Asiática':       'category_Asiática',
+    'Cafeterias':        'category_Bebidas',
+    'Bebidas':    'category_Categoria_2',
+    'Maritimo':    'category_Categoria_8',
+    'Comida_Rápida':  'category_Comida_Rápida',
+    'Desayunos':      'category_Desayunos',
+    'Italiana':       'category_Italiana',
+    'Postres':        'category_Postres',
+    'Saludable':      'category_Saludable'
+}
 df_personas.rename(columns=rename_mapping, inplace=True)
 
 # --- Columnas de características ---
